@@ -30,3 +30,9 @@ jobs:
       - name: Run code quality scan
         run: |
           python checker.py "${{ github.event.inputs.repo_url }}" "${{ github.event.inputs.repo_name }}"
+
+      - name: Upload reports artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-quality-reports
+          path: reports/
