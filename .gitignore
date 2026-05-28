@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Reports
+reports/
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+.DS_Store

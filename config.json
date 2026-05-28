@@ -1,0 +1,17 @@
+{
+  "reports_dir": "reports",
+  "repositories": [
+    {
+      "name": "my-frontend-app",
+      "url": "https://github.com/yourusername/frontend-app.git"
+    },
+    {
+      "name": "backend-service",
+      "url": "https://github.com/yourusername/backend-service.git"
+    },
+    {
+      "name": "mobile-app",
+      "url": "https://github.com/yourusername/react-native-app.git"
+    }
+  ]
+}

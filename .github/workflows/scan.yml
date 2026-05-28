@@ -1,0 +1,32 @@
+name: Code Quality Scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo_url:
+        description: 'Git repository URL to scan'
+        required: true
+      repo_name:
+        description: 'Optional custom repository name for report files'
+        required: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout scanner repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run code quality scan
+        run: |
+          python checker.py "${{ github.event.inputs.repo_url }}" "${{ github.event.inputs.repo_name }}"
